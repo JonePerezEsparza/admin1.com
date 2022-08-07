@@ -1,0 +1,53 @@
+><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<style type="text/css">
+
+    .mytable
+    {
+        border: 10px;
+        border-color:blue;
+        border-style:solid;
+    }
+</style>
+
+</head>
+<body>
+    <table class="mytable" id="tclientes">
+        <thead>
+            <th>CODIGO</th>
+            <th>NOMBRE</th>
+        </thead>
+        <tbody>
+            <tr>
+            <td>A001</td>
+            <td>cliente 1</td>
+            </tr>
+            <tr>
+            <td>A002</td>
+            <td>cliente 2</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script type="text/javascript">
+       var table1=$("#tclientes");
+     
+       $('#tclientes tr:last').after('<tr><td>A003</td><td>cliente3</td></tr>');
+       $('#tclientes tr:last').after('<tr><td>A004</td><td>cliente4</td></tr>');
+       $('#tclientes tr:last').after('<tr><td>A005</td><td>cliente5</td></tr>');
+       $('#tclientes tr:last').after('<tr><td>A006</td><td>cliente6</td></tr>');
+       $('#tclientes tr:last').after('<tr><td>A007</td><td>cliente7</td></tr>');
+       $('#tclientes tr:last').after('<tr><td>A008</td><td>cliente8</td></tr>');
+
+
+    </script>
+</body>
+</html>

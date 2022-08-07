@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+</head>
+<body>
+<table id="tclientes">
+    <thead>
+        <th>CODIGO</th>
+        <th>NOMBRE</th>
+    </thead>
+    <tbody>
+        <tr>
+        <td>A001</td>
+        <td>cliente 1</td>
+        </tr>
+        <tr>
+        <td>A002</td>
+        <td>cliente 2</td>
+        </tr>
+    </tbody>
+</table>
+
+<script type="text/javascript">
+
+var tabla1;
+var tbody1;
+tabla1=document.getElementById("tclientes");
+tbody1=tabla1.children[1];
+
+tbody1.innerHTML=tbody1.innerHTML+"<td>B004</td><td>Nombre 3</td>"
+tbody1.innerHTML=tbody1.innerHTML+"<td>B004</td><td>Nombre 4</td>"
+tbody1.innerHTML=tbody1.innerHTML+"<td>B004</td><td>Nombre 5</td>"
+tbody1.innerHTML=tbody1.innerHTML+"<td>C004</td><td>Nombre 6</td>"
+tbody1.innerHTML=tbody1.innerHTML+"<td>C004</td><td>Nombre 7</td>"
+tbody1.innerHTML=tbody1.innerHTML+"<td>C004</td><td>Nombre 8</td>"
+
+console.log(tbody1.innerHTML);
+//console.log( document.getElementById("tclientes").children[1])
+
+
+</script>
+
+</body>
+</html>
