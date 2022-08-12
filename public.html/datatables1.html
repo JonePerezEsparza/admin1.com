@@ -5,28 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+
     <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
 </head>
+
 <body>
+    <div class="container">
+        <div class="row">
+            <h1>Listado de Clientes</h1>
+    </div>
+    <div class="row">
+        <div class="col-12" style="text-align: right;padding: 50px;">
+            <button class="btn btn-primary">Nuevo Cliente</button>
+        </div>
     <table id="tclientes">
         <thead>
             <tr>
-                <th>CODIGO</th>
+                <th>DNI</th>
                 <th>NOMBRE</th>
+                <th>APELLIDO</th>
+                <th>SEXO</th>
+                <th>FECHA.NAC</th>
+                <th>ACCIONES</th>
+                
             </tr>
         </thead>
     </table>
 
+</div>
+
 <script type="text/javascript">
-    $('#tclientes').DataTable({
+    var tclientes
+    tclientes = $('#tclientes').DataTable({
         ajax: 'http://podosoft2.com/api/v1/clientes',
         columns: [
-            { data: 'CODIGO' },
-            { data: 'NOMBRE' },
-        ],
+            { data: 'DNI' },
+            { data: 'nombre' },
+            { data: 'apellido' },
+            { data: 'sexo' },
+            { data:'birth'},
+            {
+                "targets" : 3,
+                "render": function ( data, type, row, meta){
+                    return '<button>Editar</button><button>Eliminar</button>';
+                }
+            }
+
+         ],
     });
 </script>
 </body>
