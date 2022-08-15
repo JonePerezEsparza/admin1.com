@@ -1,0 +1,93 @@
+
+
+<div id="nuevoCliente" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nuevo Cliente</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body">
+        
+        <div class="row">
+            <div class="col-12">
+              <label for="txtDNI" class="form-label">DNI</label>
+              <input type="text" class="form-control" id="txtDNI" placeholder="Ingrese DNI">
+            </div>
+            <div class="col-12">
+              <label for="txtNombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="txtnombre" placeholder="Ingrese nombre">
+            </div>
+            <div class="col-12">
+              <label for="txtApe" class="form-label">Apellido</label>
+              <input type="text" class="form-control" id="txtape" placeholder="Ingrese Apellido">
+            </div>
+
+            <div class="col-12">
+              <label for="choisesx" class="form-label">Sexo</label>
+              <input type="checkbox" class="checkbox" id="choisesx">
+              <label for="choisesx">MASCULINO</label>
+              <input type="checkbox" class="checkbox" id="choisesx">
+              <label for="choisesx">FEMENINO</label>
+            </div>
+           
+
+            <div class="col-12">
+              <label for="txtfecha" class="form-label">Fecha de Nacimiento</label>
+              <input type="date" class="form-control" id="txtfecha" placeholder="Ingrese Fecha">
+            </div>
+        </div>
+
+
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" onclick="guardarCliente()">Guardar</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+  
+ function guardarCliente()
+ {
+
+  $.ajax(
+      {
+        type:"post",
+        url:"http://podosoft2.com/api/v1/clientes",
+        data: {
+          DNI:$("#txtDNI").val(),
+          nombre:$("#txtnombre").val(),
+          apellido:$("#txtape").val(),
+          sexo:$("#txtsx").val(),
+          birth:$("#txtfecha").val(),
+          
+      },
+        success:function(response)
+            {
+            
+                
+                $('#nuevoCliente').modal("hide");
+
+                recargarData();
+
+
+            }
+      }
+    );
+
+
+
+ }
+
+
+</script>
+
+ 
